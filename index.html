@@ -168,7 +168,7 @@
         <li><a href="#visual-replanning">Visual Replanning</a></li>
         <li><a href="#door-opening">Door Opening Task</a></li>
         <li><a href="#walk-grasping">Walk and Grasping</a></li>
-      <li><a href="#failure-cases">Failure Cases</a></li>
+      <li><a href="#failure-modes">Failure Modes</a></li>
       <li><a href="#abstract">Abstract</a></li>
       <li><a href="#method">Method</a></li>
       <li><a href="#BibTeX">BibTeX</a></li>
@@ -532,6 +532,7 @@
                 <video class="gallery-video" src="./static/videos/end2end/workspace/apple4.mp4" autoplay muted playsinline loop controls></video>
                 <div class="gallery-video-caption">Placement #4</div>
               </div>
+            </div>
           </div>
           <!-- Container for the caption AND buttons -->
           <div class="gallery-caption-container">
@@ -559,10 +560,9 @@
       <div class="column is-full-width">
         <h2 class="title is-3" style="text-align: left; padding-bottom: 10px;" id="visual-replanning">Visual Replanning</h2>
         
-        <!-- Video Gallery Section - Failure Cases -->
-        <div class="video-gallery-section" id="failureCasesGallerySection">
+        <div class="video-gallery-section" id="replanGallerySection">
           <div class="video-gallery-container">
-            <div class="video-gallery" id="videoGalleryFailureCases">
+            <div class="video-gallery" id="videoGalleryReplan">
               <!-- Video items with individual captions -->
               <div class="gallery-video-item">
                 <video class="gallery-video" src="./static/videos/replan/replan1.mp4" autoplay muted playsinline loop controls></video>
@@ -579,8 +579,8 @@
           <div class="gallery-caption-container">
               <!-- Move button controls INSIDE caption container -->
               <div class="gallery-nav-controls">
-                  <button class="gallery-nav left" id="scrollLeftBtnFailureCases">&lt;</button>
-                  <button class="gallery-nav right" id="scrollRightBtnFailureCases">&gt;</button>
+                  <button class="gallery-nav left" id="scrollLeftBtnReplan">&lt;</button>
+                  <button class="gallery-nav right" id="scrollRightBtnReplan">&gt;</button>
               </div>
               <!-- Caption text -->
               <p class="figure-caption gallery-caption">
@@ -638,7 +638,7 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3" style="text-align: left; padding-bottom: 10px;" id="failure-cases">Failure Modes</h2>
+        <h2 class="title is-3" style="text-align: left; padding-bottom: 10px;" id="failure-modes">Failure Modes</h2>
         
         <!-- Video Gallery Section - Failure Cases -->
         <div class="video-gallery-section" id="failureCasesGallerySection">
@@ -1058,6 +1058,12 @@
           galleryInnerId: 'videoGalleryObject',
           scrollLeftBtnId: 'scrollLeftBtnObject',
           scrollRightBtnId: 'scrollRightBtnObject'
+        },
+        {
+          sectionId: 'replanGallerySection',
+          galleryInnerId: 'videoGalleryReplan',
+          scrollLeftBtnId: 'scrollLeftBtnReplan',
+          scrollRightBtnId: 'scrollRightBtnReplan'
         },
         {
           sectionId: 'failureCasesGallerySection',
