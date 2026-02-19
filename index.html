@@ -1,1 +1,1196 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation">
+  <meta name="keywords" content="Robotics, Quadruped, Whole-body Control, Whole-body Manipulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    HERO
+  </title>
+
+  <link rel="icon" href="./static/images/hero_snapshot.png" type="image/png">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZ38WT2YPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-QZ38WT2YPD');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://kit.fontawesome.com/19914a84eb.js" crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <meta property="og:image" content="https://hero-humanoid.github.io/static/videos/teaser/teaser-360P.gif" />
+  <meta property="og:image:secure" content="https://hero-humanoid.github.io/static/videos/teaser/teaser-360P.gif" />
+</head>
+
+<section class="hero is-dark is-fullheight video" style="overflow: hidden; position:relative; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+  <div class="hero-video" style="height: 100%; width: 177.77777778vh; min-width: 100%;min-height: 56.25vw;">
+    <video playsinline autoplay muted loop>
+      <source src="./static/videos/teaser/teaser.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-video is-hidden-tablet is-inline-block-mobile"
+    style="height: 154.28571428vw; width: 100%; min-width:64.81481481vh;min-height:100%;">
+    <video playsinline autoplay muted loop>
+      <source src="./static/videos/teaser/teaser.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="overlay"></div>
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head is-hidden-mobile">
+    <header class="navbar">
+      <div class="container is-size-5">
+        <div class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item pl-4 pr-4" href="./static/hero.pdf">
+              <span class="icon" style="margin-right:5px;">
+                <img src="./static/images/pdf.svg" alt="PDF" />
+              </span>
+              <span>Paper</span>
+            </a>
+            <a class="navbar-item  pl-4 pr-4" href="https://arxiv.org/abs/2602.XXXXX">
+              <span class="icon" style="margin-right:5px;">
+                <img src="./static/images/arxiv.svg" alt="ArXiv" />
+              </span>
+              <span>arXiv</span> </a>
+            <!-- <a href="https://www.youtube.com/" class="navbar-item  pl-4 pr-4">
+              <span class="icon" style="margin-right:5px;">
+                <img src="./static/images/youtube.svg" alt="Youtube" />
+              </span>
+              <span>Video</span> </a> -->
+
+            <!-- <span class="navbar-item  pl-4 pr-4">
+              <a href="#" class="button is-inverted is-large">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code (Coming Soon)</span>
+              </a>
+            </span> -->
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 8rem;">
+        <span style="color: #ffffff;">HERO</span>
+      </h1>
+      <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 4rem;">
+        Learning Humanoid End-Effector Control for <br> Open-Vocabulary Visual Loco-Manipulation
+      </h1>
+      <div class="column has-text-centered is-hidden-tablet">
+        <div class="publication-links">
+          <span class="link-block">
+            <a href="./static/hero.pdf" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <img src="./static/images/pdf.svg" alt="PDF" />
+              </span>
+              <span>Paper</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="https://arxiv.org/abs/2602.XXXXX" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <img src="./static/images/arxiv.svg" alt="ArXiv" />
+              </span>
+              <span>arXiv</span>
+            </a>
+          </span>
+          <!-- Video Link. -->
+          <!-- <span class="link-block">
+            <a href="https://www.youtube.com/" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <img src="./static/images/youtube.svg" alt="Youtube" />
+              </span>
+              <span>Video</span>
+            </a>
+          </span> -->
+          <!-- Code Link. -->
+          <span class="link-block">
+            <a href="#"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="hero">
+  <!-- TOC Toggle Button -->
+  <button class="toc-toggle" id="tocToggle" title="Table of Contents">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="12" x2="15" y2="12"></line>
+      <line x1="3" y1="18" x2="18" y2="18"></line>
+    </svg>
+  </button>
+
+  <div class="toc" id="tocPanel">
+    <h3>Content</h3>
+    <hr>
+    <ul>
+      <li><a href="#autonomous-locomanip">Open-Vocabulary Visual Loco-Manipulation</a></li>
+      <li><a href="#end2end-objects">End-to-End Testing</a></li>
+        <li class="toc-subsection"><a href="#end2end-objects-1">10 Daily Objects</a></li>
+        <li class="toc-subsection"><a href="#end2end-clutter">Clutterred Scenes</a></li>
+        <li class="toc-subsection"><a href="#end2end-workspace">Workspace</a></li>
+        <li><a href="#visual-replanning">Visual Replanning</a></li>
+        <li><a href="#door-opening">Door Opening Task</a></li>
+        <li><a href="#walk-grasping">Walk and Grasping</a></li>
+      <li><a href="#failure-cases">Failure Cases</a></li>
+      <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#BibTeX">BibTeX</a></li>
+    </ul>
+  </div>
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" id="main-title"><span style="color: #EA553A; font-size: 1.4em;">HERO</span><br> Learning <span style="color: #EA553A;">H</span>umanoid <span style="color: #EA553A;">E</span>nd-Effector Cont<span style="color: #EA553A;">RO</span>l for <br> Open-Vocabulary Visual Loco-Manipulation</h1>
+
+          <div class="is-size-4 publication-authors" style="font-size: 1.45rem;">
+            <span class="author-block">
+              <a href="https://runpeidong.web.illinois.edu/">Runpei Dong</a><sup>*</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://komorebilzy.github.io/">Ziyan Li</a><sup>*</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://xialin-he.github.io/">Xialin He</a>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="http://saurabhg.web.illinois.edu/">Saurabh Gupta</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+          </div>
+
+        <div class="column">
+            <image src="./static/images/uiuc_logo.svg" style="width: 16%;"></image>
+        </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/hero.pdf"
+                  class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>PDF</span>
+                </a>
+              </span>
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2602.XXXXX"
+                  class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=tu7LSNYWDTs"
+                  class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Datasets Link. -->
+              <!-- <span class="link-block">
+                <a href="https://cmu.box.com/s/kmayzq5ax2rxvwn97s0hzz0aq5vws9io" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-database"></i>
+                  </span>
+                  <span>Datasets</span>
+                </a>
+              </span> -->
+              <!-- twitter Link. -->
+              <span class="link-block">
+                <a href="https://x.com/RunpeiDong/status/"
+                  class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>Summary</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming Soon)</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="autonomous-locomanip">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: left; padding-bottom: 10px;">Autonomous Visual Loco-Manipulation of Novel Objects in Novel Scenes</h2>
+
+        <!-- Video grid: 2 per row, last row centered -->
+        <div style="max-width: 1400px; margin: 20px auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;">
+
+          <div style="text-align: center; width: calc((100% - 24px) / 2);">
+            <h3 class="title is-5" style="margin-bottom: 8px; font-size: 1.3rem; font-weight: 700; color: #333;">Office &mdash; <span style="font-family: 'Computer Modern Typewriter', monospace;">"Mug"</span></h3>
+            <video autoplay muted loop playsinline controls src="./static/videos/generalization_scene/office.mp4" width="100%" style="border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"></video>
+          </div>
+
+          <div style="text-align: center; width: calc((100% - 24px) / 2);">
+            <h3 class="title is-5" style="margin-bottom: 8px; font-size: 1.3rem; font-weight: 700; color: #333;">Coffee Shop &mdash; <span style="font-family: 'Computer Modern Typewriter', monospace;">"Starbucks coffee"</span></h3>
+            <video autoplay muted loop playsinline controls src="./static/videos/generalization_scene/coffee_shop.mp4" width="100%" style="border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"></video>
+          </div>
+
+          <div style="text-align: center; width: calc((100% - 24px) / 2);">
+            <h3 class="title is-5" style="margin-bottom: 8px; font-size: 1.3rem; font-weight: 700; color: #333;">Kitchenette &mdash; <span style="font-family: 'Computer Modern Typewriter', monospace;">"green apple"</span></h3>
+            <video autoplay muted loop playsinline controls src="./static/videos/generalization_scene/kitchenette.mp4" width="100%" style="border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"></video>
+          </div>
+
+          <div style="text-align: center; width: calc((100% - 24px) / 2);">
+            <h3 class="title is-5" style="margin-bottom: 8px; font-size: 1.3rem; font-weight: 700; color: #333;">Classroom &mdash; <span style="font-family: 'Computer Modern Typewriter', monospace;">"cleaner bottle"</span></h3>
+            <video autoplay muted loop playsinline controls src="./static/videos/generalization_scene/classroom.mp4" width="100%" style="border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"></video>
+          </div>
+
+          <div style="text-align: center; width: calc((100% - 24px) / 2);">
+            <h3 class="title is-5" style="margin-bottom: 8px; font-size: 1.3rem; font-weight: 700; color: #333;">Building Lounge &mdash; <span style="font-family: 'Computer Modern Typewriter', monospace;">"water bottle"</span></h3>
+            <video autoplay muted loop playsinline controls src="./static/videos/generalization_scene/study_room.mp4" width="100%" style="border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"></video>
+          </div>
+
+          <div style="text-align: center; width: calc((100% - 24px) / 2);">
+            <h3 class="title is-5" style="margin-bottom: 8px; font-size: 1.3rem; font-weight: 700; color: #333;">Robotics Lab &mdash; <span style="font-family: 'Computer Modern Typewriter', monospace;">"kettle"</span></h3>
+            <video autoplay muted loop playsinline controls src="./static/videos/generalization_scene/robotics_lab.mp4" width="100%" style="border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"></video>
+          </div>
+
+          
+          <div style="text-align: center; width: calc((100% - 24px) / 2);">
+            <h3 class="title is-5" style="margin-bottom: 8px; font-size: 1.3rem; font-weight: 700; color: #333;">Kitchen &mdash; <span style="font-family: 'Computer Modern Typewriter', monospace;">"spam"</span></h3>
+            <video autoplay muted loop playsinline controls src="./static/videos/generalization_scene/kitchen.mp4" width="100%" style="border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"></video>
+          </div>
+          
+          <div style="text-align: center; width: calc((100% - 24px) / 2);">
+            <h3 class="title is-5" style="margin-bottom: 8px; font-size: 1.3rem; font-weight: 700; color: #333;">Den &mdash; <span style="font-family: 'Computer Modern Typewriter', monospace;">"purple book"</span></h3>
+            <video autoplay muted loop playsinline controls src="./static/videos/generalization_scene/den.mp4" width="100%" style="border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"></video>
+          </div>
+
+          <div style="text-align: center; width: calc((100% - 24px) / 2);">
+            <h3 class="title is-5" style="margin-bottom: 8px; font-size: 1.3rem; font-weight: 700; color: #333;">Corridor &mdash; <span style="font-family: 'Computer Modern Typewriter', monospace;">"helicopter"</span></h3>
+            <video autoplay muted loop playsinline controls src="./static/videos/generalization_scene/corridor.mp4" width="100%" style="border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"></video>
+          </div>
+
+          <div style="text-align: center; width: calc((100% - 24px) / 2);">
+            <h3 class="title is-5" style="margin-bottom: 8px; font-size: 1.3rem; font-weight: 700; color: #333;">Office Lounge &mdash; <span style="font-family: 'Computer Modern Typewriter', monospace;">"toy dog"</span></h3>
+            <video autoplay muted loop playsinline controls src="./static/videos/generalization_scene/office_lounge.mp4" width="100%" style="border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"></video>
+          </div>
+        </div>
+
+        <p class="figure-caption non-gallery-caption">
+          <b>Autonomous novel object grasping in novel scenes:</b> The robot <i>autonomously</i> loco-manipulates <i>novel</i> objects in <i>novel</i> scenes using onboard sensors only, first achieving open-vocabulary object loco-manipulation without any human demosntrations.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="end2end-objects">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="text-align: left; padding-bottom: 0px;" id="end2end-objects-1">10 Daily Objects</h2>
+
+        <!-- Object selector card grid -->
+        <div class="object-card-grid">
+          <div class="object-card active" data-object="1">
+            <img src="./static/images/objects/apple.png" alt="red apple">
+            <span>"red apple"</span>
+          </div>
+          <div class="object-card" data-object="2">
+            <img src="./static/images/objects/coke.png" alt="red coke can">
+            <span>"red coke can"</span>
+          </div>
+          <div class="object-card" data-object="3">
+            <img src="./static/images/objects/stop.png" alt="emergency stop button">
+            <span>"emergency stop button"</span>
+          </div>
+          <div class="object-card" data-object="4">
+            <img src="./static/images/objects/cube.png" alt="orange cube">
+            <span>"orange cube"</span>
+          </div>
+          <div class="object-card" data-object="5">
+            <img src="./static/images/objects/olive.png" alt="olive oil bottle">
+            <span>"olive oil bottle"</span>
+          </div>
+          <div class="object-card" data-object="6">
+            <img src="./static/images/objects/game.png" alt="game cartridge">
+            <span>"game cartridge"</span>
+          </div>
+          <div class="object-card" data-object="7">
+            <img src="./static/images/objects/chip.png" alt="chip can">
+            <span>"chip can"</span>
+          </div>
+          <div class="object-card" data-object="8">
+            <img src="./static/images/objects/soap.png" alt="hand soap bottle">
+            <span>"hand soap bottle"</span>
+          </div>
+          <div class="object-card" data-object="9">
+            <img src="./static/images/objects/hand.png" alt="robot hand">
+            <span>"robot hand"</span>
+          </div>
+          <div class="object-card" data-object="10">
+            <img src="./static/images/objects/flower.png" alt="red piranha plant">
+            <span>"red piranha plant"</span>
+          </div>
+        </div>
+
+        <!-- Video display area -->
+        <h3 id="objectVideoLabel" class="title is-4" style="margin-bottom: 0; margin-top: 16px; font-size: 1.6rem; font-weight: 700; color: #333; font-family: 'Computer Modern Typewriter', monospace; text-align: center;">"red apple"</h3>
+
+        <!-- Row 1: Standard Table -->
+        <h4 class="title is-5" style="margin-bottom: 0; margin-top: 14px; font-size: 1.2rem; font-weight: 600; color: #555; font-family: 'Computer Modern Typewriter', monospace; text-align: center;">Standard Table (0.74m)</h4>
+        <div class="video-gallery-section" id="objectGallerySection1">
+          <div class="video-gallery-container">
+            <div class="video-gallery" id="videoGalleryObject1">
+              <div class="gallery-video-item">
+                <video id="objectVideo1" class="gallery-video" src="./static/videos/end2end/table1/red_apple1.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Trial #1</div>
+              </div>
+              <div class="gallery-video-item">
+                <video id="objectVideo2" class="gallery-video" src="./static/videos/end2end/table1/red_apple2.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Trial #2</div>
+              </div>
+              <div class="gallery-video-item">
+                <video id="objectVideo3" class="gallery-video" src="./static/videos/end2end/table1/red_apple3.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Trial #3</div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-caption-container">
+              <div class="gallery-nav-controls">
+                  <button class="gallery-nav left" id="scrollLeftBtnObject1">&lt;</button>
+                  <button class="gallery-nav right" id="scrollRightBtnObject1">&gt;</button>
+              </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Short Table -->
+        <h4 class="title is-5" style="margin-bottom: 0; margin-top: 14px; font-size: 1.2rem; font-weight: 600; color: #555; font-family: 'Computer Modern Typewriter', monospace; text-align: center;">Short Table (0.56m)</h4>
+        <div class="video-gallery-section" id="objectGallerySection2">
+          <div class="video-gallery-container">
+            <div class="video-gallery" id="videoGalleryObject2">
+              <div class="gallery-video-item">
+                <video id="objectVideo4" class="gallery-video" src="./static/videos/end2end/table2/red_apple1.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Trial #1</div>
+              </div>
+              <div class="gallery-video-item">
+                <video id="objectVideo5" class="gallery-video" src="./static/videos/end2end/table2/red_apple2.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Trial #2</div>
+              </div>
+              <div class="gallery-video-item">
+                <video id="objectVideo6" class="gallery-video" src="./static/videos/end2end/table2/red_apple3.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Trial #3</div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-caption-container">
+              <div class="gallery-nav-controls">
+                  <button class="gallery-nav left" id="scrollLeftBtnObject2">&lt;</button>
+                  <button class="gallery-nav right" id="scrollRightBtnObject2">&gt;</button>
+              </div>
+              <!-- Caption text -->
+              <p class="figure-caption gallery-caption">
+                  <b>End-to-end testing on 10 daily objects:</b> The robot successfully grasps and lifts a wide variety of objects with different shapes, sizes, and materials, demonstrating its ability to generalize across diverse object categories and physical properties without any object-specific fine-tuning.
+              </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="text-align: left; padding-bottom: 0px;" id="end2end-clutter">Clutterred Scenes </h2>
+
+        <!-- Clutter layout selector card grid -->
+        <div class="object-card-grid" style="grid-template-columns: repeat(5, 1fr);">
+          <div class="object-card active" data-clutter="1">
+            <img src="./static/images/clutter/layout_1.png" alt="layout 1">
+            <span>"carrot"</span>
+          </div>
+          <div class="object-card" data-clutter="2">
+            <img src="./static/images/clutter/layout_2.png" alt="layout 2">
+            <span>"broccoli"</span>
+          </div>
+          <div class="object-card" data-clutter="3">
+            <img src="./static/images/clutter/layout_3.png" alt="layout 3">
+            <span>"orange"</span>
+          </div>
+          <div class="object-card" data-clutter="4">
+            <img src="./static/images/clutter/layout_4.png" alt="layout 4">
+            <span>"chip can"</span>
+          </div>
+          <div class="object-card" data-clutter="5">
+            <img src="./static/images/clutter/layout_5.png" alt="layout 5">
+            <span>"book"</span>
+          </div>
+        </div>
+
+        <!-- Video display area -->
+        <h3 id="clutterVideoLabel" class="title is-4" style="margin-bottom: 0; margin-top: 16px; font-size: 1.6rem; font-weight: 700; color: #333; font-family: 'Computer Modern Typewriter', monospace; text-align: center;">"chip can"</h3>
+        <div class="video-gallery-section" id="clutterGallerySection">
+          <div class="video-gallery-container">
+            <div class="video-gallery" id="videoGalleryClutter">
+              <div class="gallery-video-item">
+                <video id="clutterVideo1" class="gallery-video" src="./static/videos/end2end/clutter/layout1_1.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Trial #1</div>
+              </div>
+              <div class="gallery-video-item">
+                <video id="clutterVideo2" class="gallery-video" src="./static/videos/end2end/clutter/layout1_2.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Trial #2</div>
+              </div>
+              <div class="gallery-video-item">
+                <video id="clutterVideo3" class="gallery-video" src="./static/videos/end2end/clutter/layout1_3.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Trial #3</div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-caption-container">
+              <div class="gallery-nav-controls">
+                  <button class="gallery-nav left" id="scrollLeftBtnClutter">&lt;</button>
+                  <button class="gallery-nav right" id="scrollRightBtnClutter">&gt;</button>
+              </div>
+              <!-- Caption text -->
+              <p class="figure-caption gallery-caption">
+                  <b>Clutterred scenes:</b> The robot successfully grasps the target object from cluttered scenes with various layouts, demonstrating its ability to handle occlusions and distractions in complex environments.
+              </p>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="text-align: left; padding-bottom: 0px;" id="end2end-workspace">Workspace Generalization</h2>
+        
+        <!-- Video Gallery Section - CYLINDER POSITION VIDEOS -->
+        <div class="video-gallery-section" id="cylinderGallerySection">
+          <div class="video-gallery-container">
+            <div class="video-gallery" id="videoGalleryCylinder">
+              <!-- Video items with individual captions -->
+              <div class="gallery-video-item">
+                <video class="gallery-video" src="./static/videos/end2end/workspace/apple1.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Placement #1</div>
+              </div>
+              <div class="gallery-video-item">
+                <video class="gallery-video" src="./static/videos/end2end/workspace/apple2.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Placement #2</div>
+              </div>
+              <div class="gallery-video-item">
+                <video class="gallery-video" src="./static/videos/end2end/workspace/apple3.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Placement #3</div>
+              </div>
+              <div class="gallery-video-item">
+                <video class="gallery-video" src="./static/videos/end2end/workspace/apple4.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Placement #4</div>
+              </div>
+          </div>
+          <!-- Container for the caption AND buttons -->
+          <div class="gallery-caption-container">
+              <!-- Move button controls INSIDE caption container -->
+              <div class="gallery-nav-controls">
+                  <button class="gallery-nav left" id="scrollLeftBtnCylinder">&lt;</button>
+                  <button class="gallery-nav right" id="scrollRightBtnCylinder">&gt;</button>
+              </div>
+              <!-- Caption text -->
+              <p class="figure-caption gallery-caption">
+                  <b>Red Apple Location:</b> The robot successfully grasp the red apple from various locations and layouts on the table.
+              </p>
+          </div>
+        </div>
+        <!-- End Video Gallery Section -->
+        
+      </div> 
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="text-align: left; padding-bottom: 10px;" id="visual-replanning">Visual Replanning</h2>
+        
+        <!-- Video Gallery Section - Failure Cases -->
+        <div class="video-gallery-section" id="failureCasesGallerySection">
+          <div class="video-gallery-container">
+            <div class="video-gallery" id="videoGalleryFailureCases">
+              <!-- Video items with individual captions -->
+              <div class="gallery-video-item">
+                <video class="gallery-video" src="./static/videos/replan/replan1.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Trial #1</div>
+              </div>
+              <div class="gallery-video-item">
+                <video class="gallery-video" src="./static/videos/replan/replan2.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Trial #2</div>
+              </div>
+
+            </div>
+          </div>
+          <!-- Container for the caption AND buttons -->
+          <div class="gallery-caption-container">
+              <!-- Move button controls INSIDE caption container -->
+              <div class="gallery-nav-controls">
+                  <button class="gallery-nav left" id="scrollLeftBtnFailureCases">&lt;</button>
+                  <button class="gallery-nav right" id="scrollRightBtnFailureCases">&gt;</button>
+              </div>
+              <!-- Caption text -->
+              <p class="figure-caption gallery-caption">
+                  <b>Replanning from vision:</b> Besides the failure modes shown in trial videos, here we show some more failure cases that we observed during testing. These failure comes from object slipping, hand getting stuck, unstable grasp on plushy or heavy objects.
+              </p>
+          </div>
+        </div>
+        <!-- End Video Gallery Section -->
+      </div> 
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="text-align: left; padding-bottom: 0px;" id="door-opening">Extension to Door Opening Task</h2>
+        
+        <!-- Single Door Opening Video -->
+        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 0.75rem; margin-bottom: 20px;">
+          <h3 class="title is-5" style="margin-bottom: 8px; font-size: 1.3rem; font-weight: 700; color: #333; font-family: 'Computer Modern Typewriter', monospace; text-align: center;">"fridge door handle"</h3>
+          <video src="./static/videos/door_opening/door_opening.mp4" autoplay muted playsinline loop controls style="height: 400px; width: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);"></video>
+          <p class="figure-caption" style="text-align: center; margin-top: 10px;">
+              <b>Easy extension to door opening:</b> The robot successfully opens a door via first grasping the door handle and then return the default pose.
+          </p>
+        </div>
+      </div> 
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="text-align: left; padding-bottom: 0px;" id="walk-grasping">Walk and Grasp</h2>
+        
+        <!-- Single Walk and Grasp Video -->
+        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 0.75rem; margin-bottom: 20px;">
+          <h3 class="title is-5" style="margin-bottom: 8px; font-size: 1.3rem; font-weight: 700; color: #333; font-family: 'Computer Modern Typewriter', monospace; text-align: center;">"stapler"</h3>
+          <video src="./static/videos/walk/stapler.mp4" autoplay muted playsinline loop controls style="height: 400px; width: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);"></video>
+          <p class="figure-caption" style="text-align: center; margin-top: 10px;">
+              <b>Walk and Grasp:</b> The robot keeps walking forward until it sees the target object and stops for grasping. However, it indicates that the egocentric field of view is limited and the robot can only see objects when getting very close to objects.
+          </p>
+        </div>
+      </div> 
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="text-align: left; padding-bottom: 10px;" id="failure-cases">Failure Modes</h2>
+        
+        <!-- Video Gallery Section - Failure Cases -->
+        <div class="video-gallery-section" id="failureCasesGallerySection">
+          <div class="video-gallery-container">
+            <div class="video-gallery" id="videoGalleryFailureCases">
+              <!-- Video items with individual captions -->
+              <div class="gallery-video-item">
+                <video class="gallery-video" src="./static/videos/fail/fail1_classroom.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Object Slipping</div>
+              </div>
+              <div class="gallery-video-item">
+                <video class="gallery-video" src="./static/videos/fail/fail2_kitchen.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Hand Stuck Below High Table</div>
+              </div>
+              <div class="gallery-video-item">
+                <video class="gallery-video" src="./static/videos/fail/fail3_lounge.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Unstable Grasp on Plushy Object</div>
+              </div>
+              <div class="gallery-video-item">
+                <video class="gallery-video" src="./static/videos/fail/fail4_den.mp4" autoplay muted playsinline loop controls></video>
+                <div class="gallery-video-caption">Unstable Grasp on Heavy Object</div>
+              </div>
+
+            </div>
+          </div>
+          <!-- Container for the caption AND buttons -->
+          <div class="gallery-caption-container">
+              <!-- Move button controls INSIDE caption container -->
+              <div class="gallery-nav-controls">
+                  <button class="gallery-nav left" id="scrollLeftBtnFailureCases">&lt;</button>
+                  <button class="gallery-nav right" id="scrollRightBtnFailureCases">&gt;</button>
+              </div>
+              <!-- Caption text -->
+              <p class="figure-caption gallery-caption">
+                  <b>Failure Modes:</b> Besides the failure modes shown in trial videos, here we show some more failure cases that we observed during testing. These failure comes from object slipping, hand getting stuck, unstable grasp on plushy or heavy objects.
+              </p>
+          </div>
+        </div>
+        <!-- End Video Gallery Section -->
+      </div> 
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="abstract">
+  <div class="container">
+    <!-- Abstract. -->
+    <h2 class="title is-2" style="text-align: left;" id="abstract-title">Abstract</h2>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            Visual loco-manipulation of arbitrary objects in the wild with humanoid robots
+            requires accurate end-effector (EE) control and a generalizable understanding
+            of the scene via visual inputs (eg, RGB-D images). Existing approaches are
+            based on real-world imitation learning and exhibit limited generalization due to
+            the difficulty in collecting large-scale training datasets. This paper
+            presents a new paradigm, HERO, for object loco-manipulation with humanoid robots that
+            combines the strong generalization and open-vocabulary understanding
+            of large vision models with strong control performance from
+            simulated training. We achieve this by designing an accurate residual-aware
+            EE tracking policy. This EE tracking policy combines
+            classical robotics with machine learning. It uses a) inverse kinematics to
+            convert residual end-effector targets into reference trajectories, b) a learned neural
+            forward model for accurate forward kinematics, c) goal adjustment, and d)
+            replanning. Together, these innovations help us cut down the end-effector
+            tracking error by 3.2x. We use this accurate end-effector tracker
+            to build a modular system for loco-manipulation, where we use
+            open-vocabulary large vision models for strong visual generalization. Our system is
+            able to operate in diverse real-world environments, from offices to coffee
+            shops, where the robot is able to reliably manipulate various everyday objects
+            (eg, mugs, apples, toys) on surfaces ranging from 43cm to 92cm in
+            height. Systematic modular and end-to-end
+            tests in simulation and the real world demonstrate the effectiveness of our
+            proposed design. We believe the advances in this paper can open up new ways of
+            training humanoid robots to interact with objects.
+        </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="method">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: left;">Method</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            Our <span class="method" style="color: #EA553A;">HERO</span> end-effector tracking policy has following key components:
+          </p>
+          <ol>
+            <li><strong>Residual-aware Closed-Loop Tracking</strong>: Our policy learns to track both end-effector pose residual and upper body joint angles for closed-loop control.</li>
+            <li><strong>Residual Neural Forward Models</strong>: Learned neural forward kinematics model and base odometry model for precise end-effector pose and target drift adjustment.</li>
+            <li><strong>Visual Perception Generalization</strong>: A modular system that leverages large vision models for generalized visual perception for open-vocabulary manipulation.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    
+    <div class="columns is-centered">
+      <div class="column is-four-fifths" style="text-align: center;">
+        <img src="./static/images/method/hero_policy.png" alt="HERO End-Effector Tracking Policy" style="width: 100%;" />
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths" style="text-align: center;">
+        <img src="./static/images/method/hero_system.png" alt="HERO Open-Vocabulary Loco-Manipulation System" style="width: 100%;" />
+      </div>
+    </div>
+
+
+
+
+    <section class="section" id="BibTeX">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-2" style="text-align: left;">BibTeX</h2>
+            <pre><code>@article{dong2026hero,
+  title={Learning Humanoid End-Effector Control for Open-Vocabulary Visual Loco-Manipulation},
+  author={Dong, Runpei and Li, Ziyan and He, Xialin and Gupta, Saurabh},
+  journal={arXiv preprint arXiv:2602.XXXXX},
+  year={2026}
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>Page template borrowed from <a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a> and <a href="https://umi-on-legs.github.io"><span class="dnerf">UMI-On-Legs</span></a>.</p>
+        </div>
+      </div>
+    </footer>
+
+  <!-- JavaScript for Scene Selector -->
+
+  <!-- JavaScript for TOC Scroll Behavior -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Object selector (End2End)
+      (function() {
+        var objectSection = document.getElementById('end2end-objects');
+        if (!objectSection) return;
+        var objectCards = objectSection.querySelectorAll('.object-card');
+        var objectVideoLabel = document.getElementById('objectVideoLabel');
+        var objectVideo1 = document.getElementById('objectVideo1');
+        var objectVideo2 = document.getElementById('objectVideo2');
+        var objectVideo3 = document.getElementById('objectVideo3');
+        var objectVideo4 = document.getElementById('objectVideo4');
+        var objectVideo5 = document.getElementById('objectVideo5');
+        var objectVideo6 = document.getElementById('objectVideo6');
+
+        var objectNames = {
+          '1': 'red_apple', '2': 'red_coke_can', '3': 'emergency_stop_button',
+          '4': 'orange_cube', '5': 'olive_oil_bottle', '6': 'game_cartridge',
+          '7': 'chip_can', '8': 'hand_soap_bottle', '9': 'robot_hand', '10': 'red_piranha_plant'
+        };
+
+        objectCards.forEach(function(card) {
+          card.addEventListener('click', function() {
+            objectCards.forEach(function(c) { c.classList.remove('active'); });
+            card.classList.add('active');
+
+            var obj = card.getAttribute('data-object');
+            var name = objectNames[obj];
+            objectVideoLabel.textContent = card.querySelector('span').textContent;
+
+            // Table 1 (Standard Table) videos
+            var table1Videos = [objectVideo1, objectVideo2, objectVideo3];
+            table1Videos.forEach(function(v, i) {
+              v.src = './static/videos/end2end/table1/' + name + (i + 1) + '.mp4';
+              v.load();
+              v.play();
+            });
+
+            // Table 2 (Short Table) videos
+            var table2Videos = [objectVideo4, objectVideo5, objectVideo6];
+            table2Videos.forEach(function(v, i) {
+              v.src = './static/videos/end2end/table2/' + name + (i + 1) + '.mp4';
+              v.load();
+              v.play();
+            });
+          });
+        });
+      })();
+
+      // Clutter scene selector
+      (function() {
+        var clutterSection = document.getElementById('end2end-clutter');
+        if (!clutterSection) return;
+        var section = clutterSection.closest('section');
+        var clutterCards = section.querySelectorAll('.object-card');
+        var clutterVideoLabel = document.getElementById('clutterVideoLabel');
+        var clutterVideo1 = document.getElementById('clutterVideo1');
+        var clutterVideo2 = document.getElementById('clutterVideo2');
+        var clutterVideo3 = document.getElementById('clutterVideo3');
+
+        var clutterNames = {
+          '1': 'layout1', '2': 'layout2', '3': 'layout3',
+          '4': 'layout4', '5': 'layout5'
+        };
+
+        clutterCards.forEach(function(card) {
+          card.addEventListener('click', function() {
+            clutterCards.forEach(function(c) { c.classList.remove('active'); });
+            card.classList.add('active');
+
+            var idx = card.getAttribute('data-clutter');
+            var name = clutterNames[idx];
+            clutterVideoLabel.textContent = card.querySelector('span').textContent;
+
+            var videos = [clutterVideo1, clutterVideo2, clutterVideo3];
+            videos.forEach(function(v, i) {
+              v.src = './static/videos/end2end/clutter/' + name + '_' + (i + 1) + '.mp4';
+              v.load();
+              v.play();
+            });
+          });
+        });
+      })();
+
+      const toc = document.getElementById('tocPanel');
+      const tocToggle = document.getElementById('tocToggle');
+      const mainTitle = document.getElementById('main-title');
+      let tocOpen = true; // shown by default
+
+      if (toc && tocToggle && mainTitle) {
+        // Show/hide toggle button based on scroll position
+        function checkToggleVisibility() {
+          const titleRect = mainTitle.getBoundingClientRect();
+          if (titleRect.top <= 100) {
+            tocToggle.classList.add('visible');
+            // Open TOC + activate button when first shown
+            if (tocOpen) {
+              toc.classList.add('open');
+              tocToggle.classList.add('active');
+            }
+          } else {
+            tocToggle.classList.remove('visible');
+            toc.classList.remove('open');
+            tocToggle.classList.remove('active');
+          }
+        }
+
+        // Toggle TOC on button click
+        tocToggle.addEventListener('click', function() {
+          tocOpen = !tocOpen;
+          toc.classList.toggle('open', tocOpen);
+          tocToggle.classList.toggle('active', tocOpen);
+        });
+
+        // TOC links just navigate; panel stays open
+
+
+        window.addEventListener('scroll', checkToggleVisibility);
+        checkToggleVisibility();
+      }
+
+      // Active section highlighting in TOC
+      const tocLinks = document.querySelectorAll('.toc a');
+      const sections = [];
+      
+      // Collect all sections that have corresponding TOC links
+      tocLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const sectionId = href.substring(1);
+          const section = document.getElementById(sectionId);
+          if (section) {
+            sections.push({
+              id: sectionId,
+              element: section,
+              link: link
+            });
+          }
+        }
+      });
+
+      function updateActiveTocLink() {
+        // Get current scroll position (with offset from top)
+        const scrollPosition = window.scrollY + 150; // 150px offset to trigger earlier
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        
+        // Find the current section
+        let currentSection = null;
+        
+        // Check if we're at the bottom of the page
+        if (window.scrollY + windowHeight >= documentHeight - 50) {
+          // If at bottom, highlight the last section
+          currentSection = sections[sections.length - 1];
+        } else {
+          // Find the section that's currently in view
+          for (let i = 0; i < sections.length; i++) {
+            const section = sections[i];
+            const rect = section.element.getBoundingClientRect();
+            const sectionTop = rect.top + window.scrollY;
+            const sectionBottom = sectionTop + rect.height;
+            
+            // Check if the top of viewport is within this section (with offset)
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+              currentSection = section;
+              break;
+            }
+          }
+          
+          // If no section found in viewport, use the last section that's above current position
+          if (!currentSection) {
+            for (let i = sections.length - 1; i >= 0; i--) {
+              const section = sections[i];
+              const sectionTop = section.element.getBoundingClientRect().top + window.scrollY;
+              if (sectionTop <= scrollPosition) {
+                currentSection = section;
+                break;
+              }
+            }
+          }
+        }
+
+        // Update active class on TOC links
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+        });
+
+        if (currentSection) {
+          currentSection.link.classList.add('active');
+          
+          // Also highlight parent link if this is a subsection
+          const parentLi = currentSection.link.closest('li');
+          if (parentLi && parentLi.classList.contains('toc-subsection')) {
+            // Find the parent "Generalization" link
+            const generalizationLink = document.querySelector('.toc a[href="#generalization-1"]');
+            if (generalizationLink && !generalizationLink.closest('li').classList.contains('toc-subsection')) {
+              generalizationLink.classList.add('active');
+            }
+          }
+        }
+      }
+
+      // Update on scroll
+      window.addEventListener('scroll', updateActiveTocLink);
+      
+      // Update on load
+      updateActiveTocLink();
+    });
+  </script>
+
+  <!-- JavaScript for Video Gallery Navigation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleries = [
+        {
+          sectionId: 'trayYGallerySection',
+          galleryInnerId: 'videoGalleryTrayY',
+          scrollLeftBtnId: 'scrollLeftBtnTrayY',
+          scrollRightBtnId: 'scrollRightBtnTrayY'
+        },
+        {
+          sectionId: 'clutterGallerySection',
+          galleryInnerId: 'videoGalleryClutter',
+          scrollLeftBtnId: 'scrollLeftBtnClutter',
+          scrollRightBtnId: 'scrollRightBtnClutter'
+        },
+        {
+          sectionId: 'cylinderGallerySection',
+          galleryInnerId: 'videoGalleryCylinder',
+          scrollLeftBtnId: 'scrollLeftBtnCylinder',
+          scrollRightBtnId: 'scrollRightBtnCylinder'
+        },
+        {
+          sectionId: 'robotYGallerySection',
+          galleryInnerId: 'videoGalleryRobotY',
+          scrollLeftBtnId: 'scrollLeftBtnRobotY',
+          scrollRightBtnId: 'scrollRightBtnRobotY'
+        },
+        {
+          sectionId: 'robotXGallerySection',
+          galleryInnerId: 'videoGalleryRobotX',
+          scrollLeftBtnId: 'scrollLeftBtnRobotX',
+          scrollRightBtnId: 'scrollRightBtnRobotX'
+        },
+        {
+          sectionId: 'tableHeightGallerySection',
+          galleryInnerId: 'videoGalleryTableHeight',
+          scrollLeftBtnId: 'scrollLeftBtnTableHeight',
+          scrollRightBtnId: 'scrollRightBtnTableHeight'
+        },
+        {
+          sectionId: 'lightingGallerySection',
+          galleryInnerId: 'videoGalleryLighting',
+          scrollLeftBtnId: 'scrollLeftBtnLighting',
+          scrollRightBtnId: 'scrollRightBtnLighting'
+        },
+        {
+          sectionId: 'tableClothGallerySection',
+          galleryInnerId: 'videoGalleryTableCloth',
+          scrollLeftBtnId: 'scrollLeftBtnTableCloth',
+          scrollRightBtnId: 'scrollRightBtnTableCloth'
+        },
+        {
+          sectionId: 'tableTypeGallerySection',
+          galleryInnerId: 'videoGalleryTableType',
+          scrollLeftBtnId: 'scrollLeftBtnTableType',
+          scrollRightBtnId: 'scrollRightBtnTableType'
+        },
+        {
+          sectionId: 'objectGallerySection',
+          galleryInnerId: 'videoGalleryObject',
+          scrollLeftBtnId: 'scrollLeftBtnObject',
+          scrollRightBtnId: 'scrollRightBtnObject'
+        },
+        {
+          sectionId: 'failureCasesGallerySection',
+          galleryInnerId: 'videoGalleryFailureCases',
+          scrollLeftBtnId: 'scrollLeftBtnFailureCases',
+          scrollRightBtnId: 'scrollRightBtnFailureCases'
+        },
+        {
+          sectionId: 'objectGallerySection1',
+          galleryInnerId: 'videoGalleryObject1',
+          scrollLeftBtnId: 'scrollLeftBtnObject1',
+          scrollRightBtnId: 'scrollRightBtnObject1'
+        },
+        {
+          sectionId: 'objectGallerySection2',
+          galleryInnerId: 'videoGalleryObject2',
+          scrollLeftBtnId: 'scrollLeftBtnObject2',
+          scrollRightBtnId: 'scrollRightBtnObject2'
+        }
+      ];
+
+      galleries.forEach(gallery => {
+        const section = document.getElementById(gallery.sectionId);
+        const galleryInner = document.getElementById(gallery.galleryInnerId);
+        const scrollLeftBtn = document.getElementById(gallery.scrollLeftBtnId);
+        const scrollRightBtn = document.getElementById(gallery.scrollRightBtnId);
+
+        if (section && galleryInner && scrollLeftBtn && scrollRightBtn) {
+          // Find the gallery container (parent of galleryInner)
+          const galleryContainer = galleryInner.parentElement;
+
+          scrollLeftBtn.addEventListener('click', function() {
+            const scrollAmount = 300; // Adjust scroll distance as needed
+            galleryContainer.scrollBy({
+              left: -scrollAmount,
+              behavior: 'smooth'
+            });
+          });
+
+          scrollRightBtn.addEventListener('click', function() {
+            const scrollAmount = 300; // Adjust scroll distance as needed
+            galleryContainer.scrollBy({
+              left: scrollAmount,
+              behavior: 'smooth'
+            });
+          });
+
+          console.log(`Gallery navigation initialized for ${gallery.sectionId}`);
+        } else {
+          console.error(`Gallery elements not found for ${gallery.sectionId}`);
+        }
+      });
+    });
+  </script>
+
+  <!-- JavaScript for Timeline Navigation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const timelineContainer = document.getElementById('sim2realTimelineContainer');
+      const navLeft = document.getElementById('sim2realNavLeft');
+      const navRight = document.getElementById('sim2realNavRight');
+
+      if (timelineContainer && navLeft && navRight) {
+        navLeft.addEventListener('click', function() {
+          const scrollAmount = 400; // Adjust scroll distance as needed
+          timelineContainer.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+          });
+        });
+
+        navRight.addEventListener('click', function() {
+          const scrollAmount = 400; // Adjust scroll distance as needed
+          timelineContainer.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+          });
+        });
+
+        console.log('Timeline navigation initialized');
+      } else {
+        console.error('Timeline elements not found');
+      }
+
+      // Handle video clicks for enlarged display
+      const timelineVideos = document.querySelectorAll('.clickable-video');
+      const enlargedVideo = document.getElementById('enlargedVideo');
+      const enlargedVideoTitle = document.getElementById('enlargedVideoTitle');
+      const enlargedVideoDate = document.getElementById('enlargedVideoDate');
+
+      if (timelineVideos.length > 0 && enlargedVideo) {
+        // Set first video as active by default
+        timelineVideos[0].classList.add('active');
+
+        timelineVideos.forEach(function(video) {
+          video.addEventListener('click', function() {
+            // Remove active class from all videos
+            timelineVideos.forEach(v => v.classList.remove('active'));
+            
+            // Add active class to clicked video
+            this.classList.add('active');
+
+            // Update enlarged video
+            const videoSrc = this.getAttribute('src');
+            const videoTitle = this.getAttribute('data-title');
+            const videoDate = this.getAttribute('data-date');
+
+            enlargedVideo.src = videoSrc;
+            enlargedVideoTitle.textContent = videoTitle;
+            enlargedVideoDate.textContent = videoDate;
+
+            // Restart the enlarged video
+            enlargedVideo.load();
+            enlargedVideo.play();
+
+            console.log('Video clicked:', videoTitle);
+          });
+        });
+
+        console.log('Timeline video click handlers initialized');
+      }
+    });
+  </script>
+
+</body>
+
+</html>
