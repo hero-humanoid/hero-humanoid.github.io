@@ -886,3 +886,40 @@ h2[id^="generalization-"] {
   color: #EA553A;
 }
 /* --- End Object Card Grid --- */
+
+/* Hero video subtitle: sized per Bulma container breakpoint so the two
+   <br>-separated title lines never wrap into a third line
+   (longest line is ~24.4x the font size in Exo). */
+.hero .subtitle.hero-subtitle {
+  font-size: 3.4vw;
+}
+@media screen and (min-width: 1024px) {
+  .hero .subtitle.hero-subtitle { font-size: 2.3rem; }
+}
+@media screen and (min-width: 1216px) {
+  .hero .subtitle.hero-subtitle { font-size: 2.8rem; }
+}
+@media screen and (min-width: 1408px) {
+  .hero .subtitle.hero-subtitle { font-size: 3.2rem; }
+}
+
+/* Main-title "O" rendered as the CoRL 2026 logo badge (Austin skyline + cowboy hat).
+   The real letter is kept, just transparent, so the title still reads and copies as "HERO". */
+.corl-o {
+  position: relative;
+  margin-left: 0.05em;
+  white-space: nowrap;
+}
+.corl-o-glyph {
+  color: transparent;
+}
+.corl-o-badge {
+  position: absolute;
+  left: 50%;
+  bottom: 0.317em;   /* circle bottom on the baseline (Exo 600 metrics) */
+  height: 0.95em;    /* circle diameter = height of the capital O (0.75em) */
+  width: auto;
+  transform: translateX(-50%);
+  pointer-events: none;
+  user-select: none;
+}
