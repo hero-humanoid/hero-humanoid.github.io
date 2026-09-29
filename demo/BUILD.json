@@ -1,0 +1,63 @@
+{
+  "schema": "tabletop_browser_build_v1",
+  "sourceSha256": {
+    "app.js": "f8183d12a0a9ef7aa847358745b05e3b3292130712ca6dfac34eaf648ee0f752",
+    "build_hero_assets.mjs": "9cb7a2987ddda01f870ee449d17edcd2569eeb5c15a3022585ef2cbae2d8f9f2",
+    "client_bridge.js": "a9a4177ca84ba22049ac5d85ff9c085adc5740be446abb6c3b5b8f3e62785ec7",
+    "controller.js": "c9e9990a19bf91a8388f6760485916afb50fe0ed95115d2d8de6942b96adbad7",
+    "export_policy_assets.py": "decd455fde555bdcfbd0d329b896c00ec3c7ad873f62ad132d58c744e33e818f",
+    "export_scene.py": "ee3f949a2ae76a82e03c3de47b16858f8fc811e13d65f3e635668b6593e9097d",
+    "ik.js": "70b769efa312305bc36d2e1694106bc4525d41a836a6cad0c4b60d8c23224c73",
+    "ik_workspace.js": "0815ab48b53e590170e68146e5268f63c8aaf696e898a12045e113972443c18f",
+    "ik_workspace_overlay.js": "f7bc715a26c7d61ede014a3e327c910574cd388e74752eb68f7ee842469539ea",
+    "index.html": "a3f1aa48ab7db6fbd3c1f2bfbd85e7ea5b508cfd40ef3432ced423d3a21af515",
+    "leg_odometry.js": "f174a947954a2220afd33f24a8837420e6d1cd9b31ee244ec2f1cc43c62577d0",
+    "numerics.js": "9cde361421c17d6c18a46545e78f83eb4ea95d8e782fd14dd3c375b298998834",
+    "object_geometry.js": "2c318f2729a0caaa2364e29fb6646355b8ef10391d98bc422095f0798aff2ca7",
+    "object_selection.js": "602581b4308670273aacbe6b672ffcb483241ce7913669234f563cc8679d1c73",
+    "package-lock.json": "dc7db38fa72af73e0c01828cf9fdabbe13f0b359006b21d57190d4e33e3af862",
+    "package.json": "5ba551bb150e4e4c0b7539a59ec723273ad9be19b458386b7706ace6434967aa",
+    "package_standalone.py": "52a8420b0fbb8faffd428c906bd02b5ef8a44da801dcd165db5e5b41b1e3e2e4",
+    "placement_workspace.js": "590e06397025a2ba5f595ce737f48efc35f31682b73e937e699155cf2b78f16c",
+    "policy_math.mjs": "51a630d70c2d255483386cf6d2e0570f31fa77a1acad9afb11018e0aca6049f4",
+    "policy_parity.mjs": "31b01a13e23c2aeefc96a8026786f8eeb7cba81122bc02939600497bf5862761",
+    "policy_runtime.mjs": "eb9e3fe175d69d48fd5151c0f1877e2ffd754f66a18efa2f11346c7a03dc73a9",
+    "prepare_assets.py": "883333f9ab1b0b3a1f2007b14401b04e7e46547476b43e7418c7a5917d5718d8",
+    "reference.js": "8ba453b1941877cd76ac261c476a3a690f529b9ef91676e584d0c80810092a5c",
+    "rendering.js": "f2bb9c80a7d264a8b447c061f0c3f197e57789c55316f85b4edd22f98b0da8f9",
+    "simulation.js": "857ce7b156fbbca317c1e3892c0709505d5b63e08703340b0d50be64717d0e1c",
+    "stance.js": "a0403fe8c9b96d5e28566a3eb912768c1598de4c85445674ee0b51b9a2f80744",
+    "style.css": "eeb80c960b6c853f1f4fb659966ff27f3e7a6425344b0158c0bc13ab9d181683",
+    "vite.config.js": "5aa7fa647add611e14f53e89b73db43a96a9e12791fcb5aca2723c03b71fc538",
+    "worker.js": "603405f40da2280bc809dc36d3a30afe309e18d99bfbda89a48c817fc0c3194f"
+  },
+  "policyManifest": {
+    "schema": "browser_policy_assets_v1",
+    "onnxRuntimeWeb": "1.23.2",
+    "policies": {
+      "hero_plus": {
+        "label": "HERO",
+        "checkpoint": "model_44000",
+        "metadata": "hero_plus.json",
+        "files": {
+          "model": "hero.onnx"
+        },
+        "provenance": {
+          "files": {
+            "model": {
+              "sha256": "25e5ac26b5edc5a0043b14ff17094ebe1ce99f401a05b403a7398b0b5e7819b0",
+              "bytes": 5574682
+            }
+          },
+          "source": "Local formal HERO export",
+          "nativePolicyModule": "sim2sim.policy_hero_export"
+        }
+      }
+    }
+  },
+  "standalone": {
+    "file": "Tabletop_Lab.html",
+    "bytes": 52145845,
+    "sha256": "a0b42c0d30b013c20a27e2e59f9f7be5f1647b25be3150fb3b00f2070bdddab3"
+  }
+}

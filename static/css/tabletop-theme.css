@@ -1,0 +1,119 @@
+/* HERO project presentation; the simulation build is preserved verbatim. */
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&display=swap');
+:root {
+  font-family: 'Exo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #202c40;
+  background: #faf8f5;
+  --green: #ca4932;
+  --line: #e8e2db;
+  --muted: #737782;
+}
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, canvas:focus-visible {
+  outline-color: #e87c69;
+}
+.brand-mark { background: #ea553a; font-family: 'Exo', sans-serif; font-weight: 700; }
+.brand { color: #13294b; letter-spacing: 1.2px; }
+.hero-back { color: #747985; font-size: 10px; letter-spacing: 0; margin-left: 14px; }
+.eyebrow { color: #c94630; }
+.section-bar, .hand-row, .mode-row, .grasp-style-label, .rotation-note { color: #747782; }
+.live-dot, .connection.online i { background: #ea553a; }
+.viewer-card, .controls { border-color: #e7e2db; box-shadow: 0 4px 18px #13294b04; }
+.viewer-card { container-type: inline-size; }
+.control-section + .control-section { border-color: #eee7e1; }
+.segmented { background: #f3f1ed; }
+.segmented button { color: #737782; }
+.segmented button.selected { color: #a93f2d; box-shadow: 0 1px 5px #13294b10; }
+.height-options button.selected, .object-tile.selected {
+  color: #a73d2d; background: #fff2ec; border-color: #e9a28f;
+}
+.object-tile:hover, .view-controls button:hover { background: #fff6f0; }
+.height-options button, .object-tile, .reset-button, .mode-row select { color: #5b6372; border-color: #e5e0d8; }
+.step { color: #b14a35; border-color: #ecd5c9; }
+.height-label, .map-help, .position-controls label, .selected-name, #status-message { color: #707581; }
+#height-value { color: #a34230; }
+.selected-name, .hand-row strong { color: #97432f; background: #fbefe8; }
+.primary-button { color: #fff; background: #cf4932; font-weight: 600; }
+.primary-button:not(:disabled):hover { background: #b73c28; }
+.reset-button:hover { background: #fff4ec; }
+.target-command-form > label { color: #626a78; }
+.target-command-row input { color: #263953; background: #fdfbf8; border-color: #e5ded5; }
+.target-command-row button { color: #a34530; background: #fff3eb; border-color: #eac7b6; }
+.target-command-row button:not(:disabled):hover { background: #f9e5d8; }
+.target-choice { color: #626a78; }
+.target-choice select { color: #263953; background: #fdfbf8; border-color: #e5ded5; }
+.position-controls input { accent-color: #d45a40; }
+.scenario-note { color: #626a75; background: #f4f0e9; border-color: #e7dfd2; }
+.snapshot-link { color: #8a493a; }
+.snapshot-link:hover { color: #c94630; }
+.phase-track span.done { color: #72798a; }
+.phase-track span.active { color: #c94630; }
+.phase-pill.success { color: #24634f; }
+.phase-pill.failed { color: #a03d2b; background: #fff2e9; }
+.loading-card { background: #f5f2edeF; }
+.loading-card strong { color: #263953; }
+.loading-card p { color: #737782; }
+.loading-spinner { border-color: #e8d7cb; border-top-color: #da593e; }
+#ik-activity { color: #a64d39; }
+#ik-activity i { border-color: #f0d8ca; border-top-color: #d45a40; }
+/* Reserve a second row in narrow viewers so live status and IK stay legible
+   without moving the canvas when planning begins or ends. */
+@container (max-width: 660px) {
+  .section-bar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: 28px 20px;
+    height: 56px;
+    min-height: 56px;
+    padding-block: 4px;
+    row-gap: 0;
+  }
+  .section-bar .view-controls { grid-area: 1 / 2; }
+  .section-bar #ik-activity {
+    grid-area: 2 / 1 / 3 / -1;
+    max-width: 100%;
+  }
+}
+.toast { background: #172d4e; }
+html.hero-embedded, .hero-embedded body { background: #f9f7f3; }
+.hero-embedded .masthead, .hero-embedded .intro, .hero-embedded footer { display: none; }
+.hero-embedded main { max-width: none; padding: 16px; }
+.hero-embedded .workspace { gap: 16px; grid-template-columns: minmax(0, 1fr) 326px; }
+.hero-embedded .control-section { padding: 16px; }
+.hero-embedded .section-heading { margin-bottom: 12px; }
+.hero-embedded .section-bar { padding-inline: 13px; }
+.hero-embedded .execution { padding: 16px 18px; }
+.hero-embedded .metrics { padding-top: 14px; margin-top: 13px; gap: 24px; }
+.hero-embedded .metrics strong { font-size: 19px; }
+.hero-embedded #deposit-value { font-size: 15px; }
+.hero-embedded .scenario-note { font-size: 10px; margin-top: 12px; padding: 9px 12px; }
+.hero-embedded .controls-footer { padding: 14px 16px; border-top: 1px solid #eee7e1; background: #fff; }
+.hero-embedded .controls-footer .action-buttons { position: static; margin: 0; padding: 0; }
+@media (min-width: 761px) {
+  .hero-embedded body { overflow: hidden; }
+  .hero-embedded .workspace { height: calc(100dvh - 32px); min-height: 540px; align-items: stretch; }
+  .hero-embedded .viewers { position: static; display: flex; min-height: 0; align-self: stretch; }
+  .hero-embedded .viewer-card { width: 100%; display: flex; flex-direction: column; }
+  .hero-embedded .viewport { aspect-ratio: auto; flex: 1; min-height: 280px; max-height: none; }
+  .hero-embedded .section-bar, .hero-embedded .execution { flex-shrink: 0; }
+  .hero-embedded .controls { display: flex; flex-direction: column; height: 100%; min-height: 0; overflow: hidden; }
+  .hero-embedded .controls-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #d6b4a5 transparent; }
+  .hero-embedded .controls-footer { flex: 0 0 auto; }
+}
+@media (max-width: 1100px) and (min-width: 761px) {
+  .hero-embedded .workspace { grid-template-columns: minmax(0, 1fr) 304px; gap: 12px; }
+  .hero-embedded .metrics { gap: 16px; }
+  .hero-embedded .metrics strong { font-size: 17px; }
+  .hero-embedded .phase-track { gap: 5px; font-size: 8px; }
+}
+@media (max-width: 760px) {
+  .hero-embedded main { padding: 12px; }
+  .hero-embedded .workspace { grid-template-columns: 1fr; }
+  .hero-embedded .controls { display: block; }
+  .hero-embedded .placement-settings { border-left: 0; border-top: 1px solid var(--line); }
+  .hero-embedded .viewport { aspect-ratio: 4/3; }
+  .hero-embedded .map-wrap { aspect-ratio: 1.35; }
+  .masthead { height: auto; min-height: 68px; padding-block: 12px; flex-wrap: wrap; gap: 8px; }
+  .brand { font-size: 12px; }
+  .brand b { display: none; }
+  .hero-back { display: inline; margin-left: 3px; }
+  .connection { font-size: 9px; }
+}

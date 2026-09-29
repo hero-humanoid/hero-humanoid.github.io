@@ -1,0 +1,24 @@
+{
+  "schema": "browser_policy_assets_v1",
+  "onnxRuntimeWeb": "1.23.2",
+  "policies": {
+    "hero_plus": {
+      "label": "HERO",
+      "checkpoint": "model_44000",
+      "metadata": "hero_plus.json",
+      "files": {
+        "model": "hero.onnx"
+      },
+      "provenance": {
+        "files": {
+          "model": {
+            "sha256": "25e5ac26b5edc5a0043b14ff17094ebe1ce99f401a05b403a7398b0b5e7819b0",
+            "bytes": 5574682
+          }
+        },
+        "source": "Local formal HERO export",
+        "nativePolicyModule": "sim2sim.policy_hero_export"
+      }
+    }
+  }
+}

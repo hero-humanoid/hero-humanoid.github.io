@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/interactive-demo.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
 
@@ -36,6 +37,7 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="./static/js/interactive-demo.js" defer></script>
 
   <meta property="og:image" content="https://hero-humanoid.github.io/static/videos/teaser/teaser-360P.gif" />
   <meta property="og:image:secure" content="https://hero-humanoid.github.io/static/videos/teaser/teaser-360P.gif" />
@@ -60,6 +62,9 @@
       <div class="container is-size-5">
         <div class="navbar-menu">
           <div class="navbar-end">
+            <a class="navbar-item pl-4 pr-4 hero-demo-nav" href="#interactive-demo">
+              <span>Try the demo</span><span aria-hidden="true">↗</span>
+            </a>
             <a class="navbar-item pl-4 pr-4" href="./static/hero.pdf">
               <span class="icon" style="margin-right:5px;">
                 <img src="./static/images/pdf.svg" alt="PDF" />
@@ -151,7 +156,7 @@
 
 <section class="hero">
   <!-- TOC Toggle Button -->
-  <button class="toc-toggle" id="tocToggle" title="Table of Contents">
+  <button class="toc-toggle" id="tocToggle" title="Table of Contents" aria-label="Table of contents" aria-controls="tocPanel" aria-expanded="false">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <line x1="3" y1="6" x2="21" y2="6"></line>
       <line x1="3" y1="12" x2="15" y2="12"></line>
@@ -163,6 +168,7 @@
     <h3>Content</h3>
     <hr>
     <ul>
+      <li><a href="#interactive-demo">Interactive Demo</a></li>
       <li><a href="#autonomous-locomanip">Open-Vocabulary Visual Loco-Manipulation</a></li>
       <li><a href="#end2end-objects">End-to-End Testing</a></li>
         <li class="toc-subsection"><a href="#end2end-objects-1">10 Daily Objects</a></li>
@@ -259,6 +265,51 @@
   </div>
 </section>
 
+
+<section class="hero-demo" id="interactive-demo" aria-labelledby="hero-demo-title">
+  <div class="hero-demo-container">
+    <header class="hero-demo-heading">
+      <h2 id="hero-demo-title">Interactive Demo</h2>
+    </header>
+
+    <div class="hero-demo-shell" id="hero-demo-shell">
+      <div class="hero-demo-toolbar">
+        <div class="hero-demo-state" id="hero-demo-state" data-state="idle" hidden>
+          <span class="hero-demo-state-dot" aria-hidden="true"></span>
+          <span id="hero-demo-status" role="status" aria-live="polite">Ready to launch</span>
+        </div>
+        <div class="hero-demo-tools">
+          <button id="hero-demo-expand" class="hero-demo-tool" type="button" aria-controls="hero-demo-shell" aria-expanded="false" hidden><span aria-hidden="true">⤢</span> <span data-expand-label>Expand view</span></button>
+          <a class="hero-demo-tool" href="./demo/index.html" target="_blank" rel="noopener" aria-label="Open the interactive demo in a new tab">Open in new tab <span aria-hidden="true">↗</span></a>
+          <button id="hero-demo-close" class="hero-demo-tool hero-demo-close" type="button" aria-label="Close the demo and end this simulation session" hidden>Close <span aria-hidden="true">×</span></button>
+        </div>
+      </div>
+
+      <div class="hero-demo-preview" id="hero-demo-preview">
+        <img src="./static/images/tabletop-preview.webp" width="1600" height="901" loading="lazy" decoding="async" alt="HERO at a tabletop with graspable objects, a collection tray, and the onboard camera view.">
+        <div class="hero-demo-preview-shade" aria-hidden="true"></div>
+        <div class="hero-demo-launch-panel">
+          <a id="hero-demo-launch" class="hero-demo-launch" href="./demo/index.html" aria-controls="hero-demo-frame-host"><span class="hero-demo-play" aria-hidden="true">▶</span><span>Launch interactive demo</span><span aria-hidden="true">↗</span></a>
+          <p id="hero-demo-load-note">First launch may take a moment.</p>
+        </div>
+      </div>
+      <div class="hero-demo-frame-host" id="hero-demo-frame-host" hidden></div>
+      <noscript><p class="hero-demo-noscript">Enable JavaScript to launch the interactive demo, or <a href="./demo/index.html" target="_blank" rel="noopener">open its standalone page</a>.</p></noscript>
+    </div>
+
+    <section class="hero-demo-tips" aria-labelledby="hero-demo-tips-title">
+      <h3 id="hero-demo-tips-title">Controls &amp; tips</h3>
+      <ol class="hero-demo-tips-grid">
+        <li><span class="hero-demo-step-number" aria-hidden="true">01</span><div><h4>Add objects</h4><p>Choose a table and height. Click an object icon to add it, or to select it if it is already on the table.</p></div></li>
+        <li><span class="hero-demo-step-number" aria-hidden="true">02</span><div><h4>Arrange the tabletop</h4><p>Drag objects within the shaded placement area in the <strong>Top View</strong>. Start near the robot and keep the approach path and tray clear.</p></div></li>
+        <li><span class="hero-demo-step-number" aria-hidden="true">03</span><div><h4>Choose a grasp</h4><p>Select the target from the dropdown, then choose <strong>Side</strong> or <strong>Top Down</strong>. Object position determines the left or right hand automatically.</p></div></li>
+        <li><span class="hero-demo-step-number" aria-hidden="true">04</span><div><h4>Run the attempt</h4><p>Click <strong>Pick &amp; place</strong> to start the grasp and tray placement. The robot retracts its hands after placement.</p></div></li>
+        <li><span class="hero-demo-step-number" aria-hidden="true">05</span><div><h4>Reset or edit</h4><p><strong>Reset</strong> restores the robot and your saved object layout. <strong>Remove</strong> deletes the selected object; <strong>Clear</strong> removes all objects.</p></div></li>
+        <li><span class="hero-demo-step-number" aria-hidden="true">06</span><div><h4>Inspect the motion</h4><p>Drag the 3D view to orbit; scroll to zoom. The top-right inset shows the live view from the onboard D435i camera.</p></div></li>
+      </ol>
+    </section>
+  </div>
+</section>
 
 <section class="section" id="autonomous-locomanip">
   <div class="container">
@@ -880,7 +931,7 @@
       const toc = document.getElementById('tocPanel');
       const tocToggle = document.getElementById('tocToggle');
       const mainTitle = document.getElementById('main-title');
-      let tocOpen = true; // shown by default
+      let tocOpen = false; // Keep the preview and simulation controls unobstructed.
 
       if (toc && tocToggle && mainTitle) {
         // Show/hide toggle button based on scroll position
@@ -898,6 +949,7 @@
             toc.classList.remove('open');
             tocToggle.classList.remove('active');
           }
+          tocToggle.setAttribute('aria-expanded', String(toc.classList.contains('open')));
         }
 
         // Toggle TOC on button click
@@ -905,6 +957,7 @@
           tocOpen = !tocOpen;
           toc.classList.toggle('open', tocOpen);
           tocToggle.classList.toggle('active', tocOpen);
+          tocToggle.setAttribute('aria-expanded', String(tocOpen));
         });
 
         // TOC links just navigate; panel stays open
