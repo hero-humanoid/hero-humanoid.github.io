@@ -1,2 +1,7 @@
 _site/
 raw/
+.DS_Store
+__pycache__/
+/demo/BUILD.json
+/demo/INTEGRATION.json
+/demo/**/*.native_trace.json

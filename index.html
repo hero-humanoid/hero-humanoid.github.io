@@ -22,7 +22,7 @@
     gtag('config', 'G-QZ38WT2YPD');
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400..600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
@@ -192,7 +192,7 @@
           <div class="is-size-4 publication-authors" style="font-size: 1.45rem;">
             <span class="author-block">
               <a href="https://runpeidong.web.illinois.edu/">Runpei Dong</a><sup>*</sup>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://komorebilzy.github.io/">Ziyan Li</a><sup>*</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#">Ziyan Li</a><sup>*</sup>&nbsp;&nbsp;&nbsp;&nbsp;
               <a href="https://arjung128.github.io/">Arjun Gupta</a>&nbsp;&nbsp;&nbsp;&nbsp;
               <a href="https://xialin-he.github.io/">Xialin He</a>&nbsp;&nbsp;&nbsp;&nbsp;
               <a href="http://saurabhg.web.illinois.edu/">Saurabh Gupta</a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -298,15 +298,20 @@
     </div>
 
     <section class="hero-demo-tips" aria-labelledby="hero-demo-tips-title">
-      <h3 id="hero-demo-tips-title">Controls &amp; tips</h3>
+      <h3 id="hero-demo-tips-title">Controls &amp; tips <span aria-hidden="true">✨</span></h3>
+      <p class="hero-demo-tips-intro">Tap a card for a quick tip, then make the tabletop your own. Enjoy!</p>
       <ol class="hero-demo-tips-grid">
-        <li><span class="hero-demo-step-number" aria-hidden="true">01</span><div><h4>Add objects</h4><p>Choose a table and height. Click an object icon to add it, or to select it if it is already on the table.</p></div></li>
-        <li><span class="hero-demo-step-number" aria-hidden="true">02</span><div><h4>Arrange the tabletop</h4><p>Drag objects within the shaded placement area in the <strong>Top View</strong>. Start near the robot and keep the approach path and tray clear.</p></div></li>
-        <li><span class="hero-demo-step-number" aria-hidden="true">03</span><div><h4>Choose a grasp</h4><p>Select the target from the dropdown, then choose <strong>Side</strong> or <strong>Top Down</strong>. Object position determines the left or right hand automatically.</p></div></li>
-        <li><span class="hero-demo-step-number" aria-hidden="true">04</span><div><h4>Run the attempt</h4><p>Click <strong>Pick &amp; place</strong> to start the grasp and tray placement. The robot retracts its hands after placement.</p></div></li>
-        <li><span class="hero-demo-step-number" aria-hidden="true">05</span><div><h4>Reset or edit</h4><p><strong>Reset</strong> restores the robot and your saved object layout. <strong>Remove</strong> deletes the selected object; <strong>Clear</strong> removes all objects.</p></div></li>
-        <li><span class="hero-demo-step-number" aria-hidden="true">06</span><div><h4>Inspect the motion</h4><p>Drag the 3D view to orbit; scroll to zoom. The top-right inset shows the live view from the onboard D435i camera.</p></div></li>
+        <li><details class="hero-demo-tip"><summary><span class="hero-demo-tip-emoji" aria-hidden="true">🧩</span><span class="hero-demo-tip-label"><span class="hero-demo-step-number" aria-hidden="true">01</span><span>Add objects</span></span><span class="hero-demo-tip-toggle" aria-hidden="true">+</span></summary><p>Choose a table and height, then click an object icon to add it. Click it again to select it.</p></details></li>
+        <li><details class="hero-demo-tip"><summary><span class="hero-demo-tip-emoji" aria-hidden="true">👆</span><span class="hero-demo-tip-label"><span class="hero-demo-step-number" aria-hidden="true">02</span><span>Arrange the tabletop</span></span><span class="hero-demo-tip-toggle" aria-hidden="true">+</span></summary><p>Drag objects in the shaded <strong>Top View</strong> placement area. Start near the robot and leave the approach path and tray clear.</p></details></li>
+        <li><details class="hero-demo-tip"><summary><span class="hero-demo-tip-emoji" aria-hidden="true">🎯</span><span class="hero-demo-tip-label"><span class="hero-demo-step-number" aria-hidden="true">03</span><span>Select a target</span></span><span class="hero-demo-tip-toggle" aria-hidden="true">+</span></summary><p>Choose an <strong>Object to pick</strong>. Its position selects the hand; the robot approaches from the side.</p></details></li>
+        <li><details class="hero-demo-tip"><summary><span class="hero-demo-tip-emoji" aria-hidden="true">▶️</span><span class="hero-demo-tip-label"><span class="hero-demo-step-number" aria-hidden="true">04</span><span>Pick &amp; place</span></span><span class="hero-demo-tip-toggle" aria-hidden="true">+</span></summary><p>Ready? Click <strong>Pick &amp; place</strong> and watch the robot grasp, lift, and place the object in the tray, then retract its hands.</p></details></li>
+        <li><details class="hero-demo-tip"><summary><span class="hero-demo-tip-emoji" aria-hidden="true">🔄</span><span class="hero-demo-tip-label"><span class="hero-demo-step-number" aria-hidden="true">05</span><span>Reset or edit</span></span><span class="hero-demo-tip-toggle" aria-hidden="true">+</span></summary><p><strong>Reset</strong> restores the robot and your saved layout. <strong>Remove</strong> deletes the selected object; <strong>Clear</strong> removes them all. Try another arrangement!</p></details></li>
+        <li><details class="hero-demo-tip"><summary><span class="hero-demo-tip-emoji" aria-hidden="true">👀</span><span class="hero-demo-tip-label"><span class="hero-demo-step-number" aria-hidden="true">06</span><span>Explore the view</span></span><span class="hero-demo-tip-toggle" aria-hidden="true">+</span></summary><p>Drag the 3D view to orbit and scroll to zoom. The top-right inset is the live onboard D435i camera view.</p></details></li>
       </ol>
+      <div class="hero-demo-tips-notes">
+        <details class="hero-demo-tip hero-demo-tip-note"><summary><span class="hero-demo-tip-emoji" aria-hidden="true">💻</span><span class="hero-demo-tip-label">About browser IK</span><span class="hero-demo-tip-toggle" aria-hidden="true">+</span></summary><p>Inverse kinematics runs on your browser's CPU, without cuRobo. Solve times, solutions, and motion may differ from cuRobo on CUDA.</p></details>
+        <details class="hero-demo-tip hero-demo-tip-note"><summary><span class="hero-demo-tip-emoji" aria-hidden="true">🧺</span><span class="hero-demo-tip-label">Keep the tray clear</span><span class="hero-demo-tip-toggle" aria-hidden="true">+</span></summary><p>If the arm hesitates or jitters above a full tray, it may be searching for a collision-free release path. <strong>Remove</strong> or <strong>Clear</strong> placed objects before the next pick.</p></details>
+      </div>
     </section>
   </div>
 </section>

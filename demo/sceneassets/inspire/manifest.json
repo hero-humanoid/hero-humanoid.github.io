@@ -172,6 +172,10 @@
       "bytes": 1472384,
       "sha256": "b4d84504242a99fa915c4ed5195ce4724c67cb94d9217cd4c254cfb5937ecf5c"
     },
+    "meshes/cracker_box_visual.obj": {
+      "bytes": 936993,
+      "sha256": "5241002317c3b2e074b47e659d054835e91ff9c9fae248744a30ba507fa448fd"
+    },
     "meshes/head_link.STL": {
       "bytes": 932784,
       "sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411"
@@ -304,6 +308,10 @@
       "bytes": 619984,
       "sha256": "ec6db442b11f25eed898b5add07940c85d804f300de24dcbd264ccd8be7d554c"
     },
+    "textures/cracker_box_texture.png": {
+      "bytes": 896147,
+      "sha256": "5ccba80b612e4aec0843278bd7584811d2b1713af35c10806ba9df345c9c2240"
+    },
     "textures/demo_floor_texture.png": {
       "bytes": 38685,
       "sha256": "e2c600fe8c4b13199cbb69a160df03a2c03b469efa5e7e80068f50808a97e75d"
@@ -334,10 +342,5 @@
   "compatibilityEdits": [
     "Texture buffers externalized losslessly to PNG with colorspace preserved.",
     "Full-precision native physical parameters, including polynomial damping, reapplied after loading."
-  ],
-  "sourceSha256": {
-    "interactive_scene.py": "0c24eda9f24359a28f3ea47415743c08a92846a0520055b59fa7850d225008eb",
-    "plant.py": "5ba38411a82c04eee3dd988742dc5cd782d952789204c6c1b8f7d27f4089cf65",
-    "interactive_client/export_scene.py": "ae14062948c368e07b08b072b1e78e19bf2fcdfea2cd610bd4b77294b4656193"
-  }
+  ]
 }

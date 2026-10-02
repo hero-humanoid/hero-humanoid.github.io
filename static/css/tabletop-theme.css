@@ -8,12 +8,20 @@
   --line: #e8e2db;
   --muted: #737782;
 }
-button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, canvas:focus-visible {
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, canvas:focus-visible, summary:focus-visible {
   outline-color: #e87c69;
 }
-.brand-mark { background: #ea553a; font-family: 'Exo', sans-serif; font-weight: 700; }
-.brand { color: #13294b; letter-spacing: 1.2px; }
-.hero-back { color: #747985; font-size: 10px; letter-spacing: 0; margin-left: 14px; }
+.masthead { height: auto; min-height: 92px; padding-block: 16px; gap: 24px; }
+.brand { flex: 1 1 auto; min-width: 0; max-width: 1040px; color: #13294b; gap: 12px; letter-spacing: 0; }
+.brand-mark { width: 32px; height: 32px; flex: 0 0 32px; margin: 0; background: #ea553a; font-family: 'Exo', sans-serif; font-weight: 700; }
+.brand-copy { display: flex; flex-direction: column; min-width: 0; gap: 7px; }
+.brand-title { font-size: 14px; font-weight: 500; line-height: 1.5; text-wrap: balance; }
+.brand-title strong { color: #c94630; font-weight: 700; }
+.brand-venue { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin: 0; padding: 0; border: 0; background: transparent; color: #a6492b; font-size: 10px; font-weight: 700; line-height: 1.3; letter-spacing: 0; white-space: normal; }
+.hero-venue { padding: 3px 7px; border: 1px solid #efd5c4; border-radius: 5px; color: #a6492b; background: #fff4e9; font-size: 10px; font-weight: 700; line-height: 1.3; }
+.hero-back { color: #747985; font-size: 10px; line-height: 1.3; }
+.brand:hover .hero-back { color: #c94630; }
+.connection { flex: 0 0 auto; }
 .eyebrow { color: #c94630; }
 .section-bar, .hand-row, .mode-row, .grasp-style-label, .rotation-note { color: #747782; }
 .live-dot, .connection.online i { background: #ea553a; }
@@ -29,7 +37,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .object-tile:hover, .view-controls button:hover { background: #fff6f0; }
 .height-options button, .object-tile, .reset-button, .mode-row select { color: #5b6372; border-color: #e5e0d8; }
 .step { color: #b14a35; border-color: #ecd5c9; }
-.height-label, .map-help, .position-controls label, .selected-name, #status-message { color: #707581; }
+.height-label, .map-help, .selected-name, #status-message { color: #707581; }
 #height-value { color: #a34230; }
 .selected-name, .hand-row strong { color: #97432f; background: #fbefe8; }
 .primary-button { color: #fff; background: #cf4932; font-weight: 600; }
@@ -41,7 +49,18 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .target-command-row button:not(:disabled):hover { background: #f9e5d8; }
 .target-choice { color: #626a78; }
 .target-choice select { color: #263953; background: #fdfbf8; border-color: #e5ded5; }
-.position-controls input { accent-color: #d45a40; }
+.quick-guide { background: #fbf7f0; border-color: #e9e2d6; }
+.quick-guide, .quick-guide .quick-guide-welcome { color: #707581; }
+.quick-guide h3, .quick-guide strong, .quick-guide-enjoy { color: #a6492b; }
+.tips-section, .tip-body, .tips-note { color: #707581; }
+.tips-intro { color: #737782; }
+.tip-card { border-color: #e8e2d9; background: #faf8f4; }
+.tip-card summary, .tip-body strong, .tips-note strong { color: #554b46; }
+.tip-card summary::after { color: #a94a36; }
+.tip-card summary:hover { background: #fff2e9; }
+.tip-card[open] { background: #fff8f1; border-color: #deb59e; }
+.tip-icon { border-color: #eee5d9; }
+.tips-note { background: #faf7f0; border-color: #e2d1be; }
 .scenario-note { color: #626a75; background: #f4f0e9; border-color: #e7dfd2; }
 .snapshot-link { color: #8a493a; }
 .snapshot-link:hover { color: #c94630; }
@@ -111,9 +130,10 @@ html.hero-embedded, .hero-embedded body { background: #f9f7f3; }
   .hero-embedded .placement-settings { border-left: 0; border-top: 1px solid var(--line); }
   .hero-embedded .viewport { aspect-ratio: 4/3; }
   .hero-embedded .map-wrap { aspect-ratio: 1.35; }
-  .masthead { height: auto; min-height: 68px; padding-block: 12px; flex-wrap: wrap; gap: 8px; }
-  .brand { font-size: 12px; }
-  .brand b { display: none; }
-  .hero-back { display: inline; margin-left: 3px; }
-  .connection { font-size: 9px; }
+  .masthead { min-height: 68px; padding-block: 14px; flex-wrap: wrap; gap: 12px; }
+  .brand { flex-basis: 100%; align-items: flex-start; gap: 10px; }
+  .brand-mark { margin-top: 3px; }
+  .brand-title { font-size: 12px; line-height: 1.55; text-wrap: pretty; }
+  .brand-venue { gap: 10px; }
+  .connection { margin-left: 42px; font-size: 9px; }
 }

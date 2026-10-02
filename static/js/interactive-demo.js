@@ -107,6 +107,68 @@
     }
   };
 
+  // --- Presentation only: entrance reveal, pointer tilt, and whole-card
+  // launch. Nothing here touches the simulation or its browsing context. ---
+  const section = document.getElementById('interactive-demo');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  if (section) {
+    section.classList.add('has-reveal');
+    if (reduceMotion || typeof IntersectionObserver === 'undefined') {
+      section.classList.add('is-inview');
+    } else {
+      const revealer = new IntersectionObserver((entries) => {
+        if (!entries.some(entry => entry.isIntersecting)) return;
+        section.classList.add('is-inview');
+        revealer.disconnect();
+      }, { threshold: 0.15 });
+      revealer.observe(section);
+    }
+  }
+
+  let tiltFrame = 0;
+  let pointer = null;
+  const setTilt = (px, py) => {
+    const maxDeg = 2.4;
+    shell.style.setProperty('--hd-px', px.toFixed(3));
+    shell.style.setProperty('--hd-py', py.toFixed(3));
+    shell.style.setProperty('--hd-tilt-x', `${((py - 0.5) * 2 * maxDeg).toFixed(2)}deg`);
+    shell.style.setProperty('--hd-tilt-y', `${((0.5 - px) * 2 * maxDeg).toFixed(2)}deg`);
+  };
+  const resetTilt = () => {
+    if (tiltFrame) cancelAnimationFrame(tiltFrame);
+    tiltFrame = 0;
+    pointer = null;
+    shell.classList.remove('is-tilting');
+    setTilt(0.5, 0.5);
+  };
+  if (finePointer && !reduceMotion) {
+    preview.addEventListener('pointerenter', () => shell.classList.add('is-tilting'));
+    preview.addEventListener('pointermove', (event) => {
+      pointer = event;
+      if (tiltFrame) return;
+      tiltFrame = requestAnimationFrame(() => {
+        tiltFrame = 0;
+        if (!pointer) return;
+        const rect = preview.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        setTilt(
+          Math.min(1, Math.max(0, (pointer.clientX - rect.left) / rect.width)),
+          Math.min(1, Math.max(0, (pointer.clientY - rect.top) / rect.height)),
+        );
+      });
+    }, { passive: true });
+    preview.addEventListener('pointerleave', resetTilt);
+  }
+
+  // The whole preview card is a launch affordance. The button stays the single
+  // focusable control and keeps its link semantics; clicks elsewhere defer to it.
+  preview.addEventListener('click', (event) => {
+    if (event.target.closest('a, button')) return;
+    launch.click();
+  });
+
   launch.addEventListener('click', (event) => {
     // Small screens use the standalone layout and its Back to HERO link.
     // Modifier-clicks and JavaScript-free navigation keep normal link behavior.
@@ -121,6 +183,7 @@
     pauseHomepageVideos();
     setStatus('loading', 'Loading simulator…');
     preview.hidden = true;
+    resetTilt();
     host.hidden = false;
     expand.hidden = false;
     close.hidden = false;

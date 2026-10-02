@@ -11,8 +11,10 @@
     const brand = document.querySelector('.brand');
     if (brand) {
       brand.href = '../index.html#interactive-demo';
-      brand.setAttribute('aria-label', 'Back to the HERO project page');
-      brand.innerHTML = '<span class="brand-mark">H</span>HERO <b>TABLETOP LAB</b><span class="hero-back">↗ Project page</span>';
+      const paperTitle = 'HERO: Learning Humanoid End-Effector Control for Visual Whole-Body Open-Vocabulary Object Grasping';
+      brand.setAttribute('aria-label', paperTitle + '. CoRL 2026. Back to the project page.');
+      brand.innerHTML = '<span class="brand-mark" aria-hidden="true">H</span><span class="brand-copy"><span class="brand-title"><strong>HERO:</strong> Learning Humanoid End-Effector Control for Visual Whole-Body Open-Vocabulary Object Grasping</span><span class="brand-venue"><span class="hero-venue">CoRL 2026</span><span class="hero-back">Project page <span aria-hidden="true">↗</span></span></span></span>';
+      document.title = paperTitle + ' | CoRL 2026 Interactive Demo';
     }
     if (!embedded) return;
     // Keep the existing buttons and their app handlers. The desktop sidebar
